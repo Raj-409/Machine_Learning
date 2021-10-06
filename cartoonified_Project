@@ -1,17 +1,18 @@
- #OpenCV is a cross-platform library using which we can develop real-time computer vision applications. It mainly focuses on image processing, video capture and analysis including features like face detection and object detection.
+#OpenCV is a cross-platform library using which we can develop real-time computer vision applications.
+#It mainly focuses on image processing, video capture and analysis including features like face detection and object detection.
+
 import cv2     
 import numpy as np
-from tkinter.filedialog import *   # tkinter filedialog:Python Tkinter (and TK) offer a set of dialogs that 
-                                   #you can use when working with files.
+from tkinter.filedialog import *  
+
+# tkinter filedialog:Python Tkinter (and TK) offer a set of dialogs that you can use when working with files.
 
 photo = askopenfilename()
-img = cv2.imread(photo) # Imread is a method in cv2 which is used to store images in the form of numbers.
+# Imread is a method in cv2 which is used to store images in the form of numbers.
+img = cv2.imread(photo) 
 
-# Transforming an image to grayscale: cvtColor(image, flag) is a method in cv2 which is used to transform an image 
-                                     #into the colour-space mentioned as ‘flag’.
+# Transforming an image to grayscale: cvtColor(image, flag) is a method in cv2 which is used to transform an image into the colour-space mentioned as ‘flag’.
 grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# Smoothening a grayscale image: To smoothen an image, we simply apply a blur effect. This is done using medianBlur() 
-#function. Here, the center pixel is assigned a mean value of all the pixels which fall under the kernel. In turn,
-# creating a blur effect.
+# Smoothening a grayscale image: To smoothen an image, we simply apply a blur effect. This is done using medianBlur()function. Here, the center pixel is assigned a mean value of all the pixels which fall under the kernel. In turn, creating a blur effect.
 grey = cv2.medianBlur(grey, 5)
